@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RAIC_MEMBERS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!---- font awesome ----->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- font style -->
+    <link href="https://fonts.googleapis.com/css2?family=Quando&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Judson&display=swap" rel="stylesheet">
+      
+    <!----- Bootstrap CSS ----->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+  </head>
+
+<style type="text/css">
+
+body{
+  margin:0;
+  font-family: 'Quando', cursive;
+}
+
+.wh-bg-color{
+  background-color:dimgrey !important;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.navbar-color{
+  background-color: #ffffff !important;
+}
+
+.nav-font{
+  font-family: 'Quando', sans-serif;
+}
+
+.navbar-item{
+  color: #000 !important;
+
+}
+
+.team-section{
+	background-color: dimgrey;
+	min-height: 100vh;
+	padding:70px 15px 30px;
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+#switchtab{
+    padding-top: 100px;
+    padding-bottom: 5px;
+    font-family: 'Quando', cursive;
+}
+
+#switchtab .nav .active{
+  color: #fff !important;
+  background-color: #000000;
+}
+
+#switchtab .nav .nav-item{
+  color: white; 
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tab-content{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.tab-content .section-title{
+	flex-basis: 100%;
+	max-width: 100%;
+	margin-bottom: 70px;
+}
+
+.tab-content .section-title h1{
+	font-size: 40px;
+	text-align: center;
+	margin:auto;
+	color:whitesmoke;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.tab-content .section-title h1::after{
+  content: '';
+  height: 3px;
+  width: 130px;
+  display: block;
+  background: #090e14;
+  margin: 0px auto 5px;
+}
+
+.tab-content .team-items{
+	
+	flex-basis: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.tab-content .team-items .item{
+ flex-basis: calc(25% - 30px);
+ max-width: calc(25% - 30px);
+ transition: all .5s ease;
+ margin-bottom: 40px;
+}
+.tab-content .team-items .item img{
+	display: block;
+	width: 100%;
+  border-radius: 9px;
+  filter: drop-shadow(16px 16px 20px #000000);
+}
+
+.tab-content .team-items .item .inner{
+	position: relative;
+	z-index: 11;
+	padding:0 15px;
+}
+
+.tab-content .team-items .item .inner .info{
+	background-color: rgba(1, 5, 7, 0.945);
+	text-align: center;
+	padding: 20px 15px;
+	border-radius:8px;
+	transition: all .5s ease;
+	margin-top: -40px;
+}
+.tab-content .team-items .item:hover  .info{
+    transform: translateY(-20px);
+    filter: drop-shadow(16px 16px 20px #000000);
+}
+
+.tab-content .team-items .item:hover{
+ transform: translateY(-10px);	
+}
+
+.tab-content .team-items .item .inner .info h5{
+	margin:0;
+	font-size: 18px;
+	font-weight: 600;
+	color:#ffffff;
+}
+
+.tab-content .team-items .item .inner .info h3{
+	margin:0;
+    font-style: italic;
+	font-size: 14px;
+	font-weight: 500;
+	color: #91c4f5;
+}
+
+.tab-content .team-items .item .inner .info p{
+	font-size: 14px;
+	font-weight: 400;
+	color:#9cf893;
+	margin:10px 0 0;
+}
+
+
+.tab-content .team-items .item .inner .info .para{
+	font-size: 14px;
+	font-weight: 500;
+	color:#91c4f5;
+	margin:10px 0 0;
+}
+
+.tab-content .team-items .item .inner .info .social-links{
+	padding-top: 15px;
+}
+
+.tab-content .team-items .item .inner .info .social-links a{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-color: #ffffff;
+	color:#009688;
+	border-radius: 50%;
+	margin:0 2px;
+	text-align: center;
+	line-height: 32px;
+	font-size:16px;
+	transition: all .5s ease;
+}
+
+.tab-content .team-items .item .inner .info .social-fac a{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-color: #fdfdfd;
+	color:rgb(0, 86, 184);
+	border-radius: 50%;
+	margin:0 2px;
+	text-align: center;
+	line-height: 32px;
+    font-size:18px;
+    transition: all .5s ease;
+}
+
+.tab-content .team-items .item .inner .info .social-links a:hover{
+	box-shadow: 0 0 10px #000;
+}
+
+.navbar .navbar-toggler{
+  background-color: #000;
+}
+
+.navbar img{
+   padding-right: 7px;
+}
+
+.navbar img:hover{
+   transform: scale(1.1);
+}
+
+.nav-item:hover{
+    transform: scale(1.1);
+}
+
+.nav-item-main:hover{
+    transform: scale(1.1);
+    color:rgb(26, 26, 179) !important;
+}
+
+.navbar-nav .fa{
+    color:rgb(238, 71, 71) !important;
+}
+
+.navbar-nav .active{
+    color:firebrick !important;
+}
+
+
+/*responsive*/
+@media(max-width: 991px){
+	.tab-content .team-items .item{
+      flex-basis: calc(50% - 50px);
+       max-width: calc(50% - 50px);
+
+   }
+}
+
+@media(max-width: 825px){
+	.tab-content .team-items .item{
+      flex-basis: calc(80%);
+       max-width: calc(80%);
+
+   }
+}
+
+@media(max-width: 1024px){
+	.tab-content .team-items .item{
+      flex-basis: calc(80%);
+       max-width: calc(80%);
+
+   }
+}
+
+</style>
+
+<body>
+<div class="wh-bg-color">
+  <header class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-color rounded fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="https://www.svce.ac.in/">
+        <img src="../members_pic_size/svce.png" width="50" height="35" class="d-inline-block align-top" alt="svce-logo"></a>
+        <a href="../pages/home.html">
+        <img src="../members_pic/RAIC.png" width="50" height="35" class="d-inline-block align-top" alt="raic-logo">
+        </a>
+        <div class="collapse navbar-collapse justify-content-sm-center nav-font" id="navbarsExample10">
+            <div class="navbar-nav nav-info">
+                <a class="nav-link nav-item-main navbar-item" href="../pages/raic_members.html"><span class="fa fa-home"></span> HOME</a>
+                <a class="nav-link nav-item-main navbar-item active" href="raic_members.html"><span class="fa fa-users"></span> MEMBERS <span class="sr-only">(current)</span></a>
+                <a class="nav-link nav-item-main navbar-item" href="../pages/raic_events.html"><span class="fa fa-calendar-o"></span> EVENTS</a>
+            </div>
+        </div>
+      </nav>
+  </header>
+
+   <!-------- inner tabs -------->
+   <div id="switchtab" class="container">
+    <div class="nav nav-pills justify-content-center " role="tablist">
+      <a class="nav-item nav-link active" data-toggle="tab" href="#faculty">FACULTY</a>
+      <a class="nav-item nav-link" href="#officebearers" data-toggle="tab">OFFICE BEARERS</a>
+      <a class="nav-item nav-link" data-toggle="tab" href="#mentors">MENTORS</a>
+    </div>
+  </div>
+
+ <!------ faculty -------> 
+ <div class="tab-content">
+     <div class="container tab-pane fade show active"  id="faculty">
+         <div class="row">
+             <div class="section-title">
+                 <h1>FACULTY</h1>
+                 <hr>
+             </div>
+         </div>
+         <div class="row">
+             <div class="team-items">
+                  <div class="item">
+                      <img src="../members_pic_size/hod.png" alt="Muthukumaran">
+                      <div class="inner">
+                          <div class="info">
+                               <h5>MUTHUKUMARAN</h5>
+                               <p class="para">HEAD OF THE DEPARTMENT</p>
+                               <div class="social-links social-fac">
+                                   <a href="https://www.svce.ac.in/profile-info/?id=4310"><span class="fa fa-info"></span></a>
+                               </div>
+                          </div>
+                      </div>
+                  </div>
+ 
+             </div>
+         </div>
+
+         <div class="row">
+          <div class="team-items">
+
+            <div class="item">
+              <img src="../members_pic_size/jpmam.png" alt="Jeyarabha">
+              <div class="inner">
+                  <div class="info">
+                       <h5>JEYAPRABHA TJ</h5>
+                       <p class="para">FACULTY CO-ORDINATOR</p>
+                       <div class="social-links social-fac">
+                           <a href="https://www.svce.ac.in/profile-info/?id=5005"><span class="fa fa-info"></span></a>
+                       </div>
+                  </div>
+              </div>
+          </div>       
+
+               <div class="item">
+                   <img src="../members_pic_size/menakamam.png" alt="Meenaka">
+                   <div class="inner">
+                       <div class="info">
+                            <h5>MEENAKA</h5>
+                            <p class="para">FACULTY CO-ORDINATOR</p>
+                            <div class="social-links social-fac">
+                                <a href="https://www.svce.ac.in/profile-info/?id=5021"><span class="fa fa-info"></span></a>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="item">
+                <img src="../members_pic_size/loganathan.png" alt="Loganathan">
+                <div class="inner">
+                    <div class="info">
+                         <h5>LOGANATHAN</h5>
+                         <p class="para">FACULTY CO-ORDINATOR</p>
+                         <div class="social-links social-fac">
+                             <a href="https://www.svce.ac.in/profile-info/?id=4799"><span class="fa fa-info"></span></a>
+                         </div>
+                    </div>
+                </div>
+            </div>        
+          </div>
+      </div>
+     </div>
+
+<!------ officebearers -------> 
+    
+    <div class="container tab-pane fade" id="officebearers">
+        <div class="row">
+            <div class="section-title">
+                <h1>OFFICE BEARERS</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="team-items">
+                 <div class="item">
+                     <img src="../members_pic_size/sudesh.png" alt="Sudesh Kumar">
+                     <div class="inner">
+                         <div class="info">
+                              <h5>SUDESH KUMAR S</S></h5>
+                              <h3>PRESIDENT</h3>
+                              <p> FINAL YEAR</p>
+                              <div class="social-links">
+                                  <a href="https://www.linkedin.com/in/sudesh-kumar-b133b5185/"><span class="fa fa-linkedin"></span></a>
+                              </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="item">
+                   <img src="../members_pic_size/sandeep.png" alt="Sandeep Pai">
+                   <div class="inner">
+                       <div class="info">
+                            <h5>SANDEEP RAI K</h5>
+                            <h3>SECRETARY</h3>
+                            <p>FINAL YEAR</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/sandeep-pai-5a92a515a"><span class="fa fa-linkedin"></span></a>
+                            </div>
+                       </div>
+                   </div>
+               </div>     
+               <div class="item">
+                <img src="../members_pic_size/sushma.png" alt="Sushma">
+                <div class="inner">
+                    <div class="info">
+                         <h5>SUSHMA K</h5>
+                         <h3>JOINT SECRETARY</h3>
+                         <p>FINAL YEAR</p>
+                         <div class="social-links">
+                             <a href="https://www.linkedin.com/in/sushma-k-804a97184/"><span class="fa fa-linkedin"></span></a>
+                         </div>
+                    </div>
+                </div>
+            </div>        
+            </div>
+        </div>
+        <!---EXECUTIVE MEMBERS--->
+        <div class="row">
+          <div class="team-items">
+               <div class="item">
+                   <img src="../members_pic_size/madhuv.png" alt="Madhumitha.V">
+                   <div class="inner">
+                       <div class="info">
+                            <h5>MADHUMITHA V</h5>
+                            <h3>EXECUTIVE MEMBER</h3>
+                            <p> THIRD YEAR</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/madhumitha-viswanathan-248733184"><span class="fa fa-linkedin"></span></a>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="item">
+                 <img src="../members_pic_size/rahul.png" alt="Rahul">
+                 <div class="inner">
+                     <div class="info">
+                          <h5>RAHUL B</h5>
+                          <h3>EXECUTIVE MEMBER</h3>
+                          <p>THIRD YEAR</p>
+                          <div class="social-links">
+                              <a href="http://linkedin.com/in/rahul-b-689836183"><span class="fa fa-linkedin"></span></a>
+                          </div>
+                     </div>
+                 </div>
+             </div>     
+          </div>
+        </div>
+      </div>
+
+   <!------ mentors -------> 
+    
+    <div class="container tab-pane fade" id="mentors">
+      <div class="row">
+          <div class="section-title">
+              <h1>MENTORS</h1>
+              <hr>
+          </div>
+      </div>
+      <div class="row">
+          <div class="team-items">
+               <div class="item">
+                   <img src="../members_pic_size/prem.png" alt="Prem Kumar">
+                   <div class="inner">
+                       <div class="info">
+                            <h5>PREM KUMAR S</h5>
+                            <p> FINAL YEAR</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/prem-raj-16042711/"><span class="fa fa-linkedin"></span></a>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="item">
+                 <img src="../members_pic_size/madhus.png" alt="Madhumitha S">
+                 <div class="inner">
+                     <div class="info">
+                          <h5>MADHUMITHA S</h5>
+                          <p>THIRD YEAR</p>
+                          <div class="social-links">
+                              <a href="https://www.linkedin.com/in/madhumitha-s-03470a184"><span class="fa fa-linkedin"></span></a>
+                          </div>
+                     </div>
+                 </div>
+             </div>     
+             <div class="item">
+              <img src="../members_pic_size/monica.png" alt="Monica">
+              <div class="inner">
+                  <div class="info">
+                       <h5>MONICA R</h5>
+                       <p>THIRD YEAR</p>
+                       <div class="social-links">
+                           <a href="https://www.linkedin.com/in/monica-ravikumar-713965170/"><span class="fa fa-linkedin"></span></a>
+                       </div>
+                  </div>
+              </div>
+          </div>        
+          </div>
+      </div>
+      <!---EXECUTIVE MEMBERS--->
+      <div class="row">
+        <div class="team-items">
+             <div class="item">
+                 <img src="../members_pic_size/harshithah.png" alt="Harshithah">
+                 <div class="inner">
+                     <div class="info">
+                          <h5>HARSHITHAH K S</h5>
+                          <p> THIRD YEAR</p>
+                          <div class="social-links">
+                              <a href="https://www.linkedin.com/in/harshithah-k-s-a5b708184/"><span class="fa fa-linkedin"></span></a>
+                          </div>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="item">
+               <img src="../members_pic_size/vishnusai.png" alt="Vishnu Sai">
+               <div class="inner">
+                   <div class="info">
+                        <h5>VISHNU SAI R</h5>
+                        <p>THIRD YEAR</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/vishnusairamesh/"><span class="fa fa-linkedin"></span></a>
+                        </div>
+                   </div>
+               </div>
+           </div>     
+        </div>
+      </div>
+    </div>
+
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>
